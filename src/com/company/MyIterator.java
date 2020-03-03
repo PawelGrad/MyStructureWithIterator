@@ -23,7 +23,7 @@ public class MyIterator implements Iterator<INode> {
             throw new NoSuchElementException();
         }
         if(stack.peek() instanceof ICompositeNode) {
-            //Sciagam node ze stosu przed dołożeniem nowych elementów na góre stosu, ze uniknanc zapetlenie kiedy next() znowu by trafil na ten sam node.
+            //Sciagam node ze stosu przed dołożeniem nowych elementów na gore stosu, zeby uniknanc zapetlenie kiedy next() znowu by trafil na ten sam node. (LIFO)
             INode node = stack.pop();
             convertListToStack(((ICompositeNode) node).getNodes());
             return node;

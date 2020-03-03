@@ -16,12 +16,13 @@ public class Main {
         List<INode> nodes = new ArrayList<>(Arrays.asList(n1,n2));
         CompositeNode c1 = new CompositeNode("C1","A",nodes);
 
-        List<INode> nodes2 = new ArrayList<>(Arrays.asList(n4,n5));
+        List<INode> nodes2 = new ArrayList<>(Arrays.asList(n4));
         CompositeNode c2 = new CompositeNode("C2","CA",nodes2);
-        CompositeNode c3 = new CompositeNode("C3","C3",new ArrayList<INode>(Arrays.asList(c1,c2)));
+        CompositeNode c3 = new CompositeNode("C3","C3",new ArrayList<INode>(Arrays.asList(c2)));
 
         MyStructure myStructure = new MyStructure(new ArrayList<INode>(Arrays.asList(c3,n3)));
-
+        System.out.println(myStructure.count());
+        System.out.println(myStructure.findByCode("N4"));
 
     }
 }
